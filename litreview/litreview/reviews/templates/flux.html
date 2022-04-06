@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Flux{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'style-flux.css' %}" />
+{% endblock %}
+
+{% block content %}
+    <section>
+        <a href="/create-ticket"><button>Demander une critique</button></a>
+        <a href="/create-critical"><button>Créer une critique</button></a>
+    </section>
+
+    <article>
+
+    </article>
+
+{% endblock %}

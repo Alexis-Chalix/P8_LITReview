@@ -1,0 +1,85 @@
+section {
+    width: 60%;
+    margin: 20px 20%;
+}
+
+section .block {
+    width: 100%;
+}
+
+section .block h2 {
+    text-align: center;
+}
+
+section .block .new-follow {
+    width: 60%;
+    margin: 0 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section .block input {
+    width: 70%;
+    padding: 15px;
+    font-size: 20px;
+    border: solid 1px black;
+}
+
+section .block input:focus {
+    outline: none;
+}
+
+section .block button {
+    width: 20%;
+    height: 45px;
+    background-color: white;
+    border: solid 1px black;
+    border-radius: 10px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+section .block button:hover {
+    font-weight: bold;
+}
+
+section .block .follows, section .block .followers {
+    width: 70%;
+    margin: 0 15%;
+    border-top: solid 1px black;
+    border-left: solid 1px black;
+    border-right: solid 1px black;
+}
+
+section .block .follows .follow, section .block .followers .follower {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid 1px black;
+    font-size: 18px;
+}
+
+section .block .follows .follow .name {
+    width: 80%;
+    border-right: solid 1px black;
+    margin: 0;
+    padding: 10px;
+}
+
+section .block .follows .unfollow {
+    width: 20%;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+section .block .follows .unfollow:hover {
+    cursor: pointer;
+}
+
+section .block .followers .follower .name {
+    margin: 0;
+    padding: 10px;
+}

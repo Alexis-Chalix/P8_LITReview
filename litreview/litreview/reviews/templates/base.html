@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="fr">
+<head>
+    <link rel="stylesheet" href="{% static 'style-base.css' %}" />
+    {% block styles %}{% endblock %}
+    <meta charset="UTF-8">
+    <title>LITReview - {% block title %}{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <div class="left"></div>
+        <div class="middle">
+            <h1>LITReview</h1>
+        </div>
+        <div class="right">
+            <ul>
+                <li><a href="/flux">Flux</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/follows">Abonnements</a></li>
+                <li><a href="/log-out">Se déconnecter</a></li>
+            </ul>
+        </div>
+    </header>
+
+    {% block content %}{% endblock %}
+
+</body>
+</html>

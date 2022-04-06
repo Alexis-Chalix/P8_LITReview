@@ -1,0 +1,87 @@
+section {
+    width: 60%;
+    margin: 20px 20%;
+}
+
+section h2 {
+    text-align: center;
+}
+
+section .block {
+    width: 70%;
+    margin: 20px 15%;
+}
+
+section .block h3 {
+    font-weight: 500;
+    font-size: 20px;
+    margin: 10px;
+}
+
+section .block .title-input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    font-size: 15px;
+    border: solid 1px black;
+}
+
+section .block .title-input:focus {
+    outline: none;
+}
+
+section .block .desc-input {
+    width: calc(100% - 30px);
+    height: 176px;
+    padding: 15px;
+    font-size: 15px;
+    border: solid 1px black;
+    font-family: inherit;
+    resize: none;
+}
+
+section .block .desc-input:focus {
+    outline: none;
+}
+
+section .block .label-file {
+    display: block;
+    width: 20%;
+    background-color: white;
+    border: solid 1px black;
+    border-radius: 10px;
+    font-size: 17px;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+section .block .label-file:hover {
+    font-weight: bold;
+}
+
+section .block .image-input {
+    display: none;
+}
+
+section .send {
+    width: 70%;
+    margin: 0 15%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+section .send button {
+    display: block;
+    width: 20%;
+    background-color: white;
+    border: solid 1px black;
+    border-radius: 10px;
+    font-size: 17px;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+section .send button:hover {
+    font-weight: bold;
+}

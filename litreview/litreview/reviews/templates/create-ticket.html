@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Posts{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'style-create-ticket.css' %}" />
+{% endblock %}
+
+{% block content %}
+    <section>
+        <h2>Créer un ticket</h2>
+        <div class="block">
+            <h3>Titre</h3>
+            <input type="text" class="title-input">
+        </div>
+        <div class="block">
+            <h3>Description</h3>
+            <textarea class="desc-input"></textarea>
+        </div>
+        <div class="block">
+            <h3>Image</h3>
+            <label for="file" class="label-file">Télécharger fichier</label>
+            <input id="file" type="file" class="image-input">
+        </div>
+        <div class="send">
+            <button>Envoyer</button>
+        </div>
+    </section>
+{% endblock %}

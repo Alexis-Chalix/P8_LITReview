@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Abonnements{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'style-follows.css' %}" />
+{% endblock %}
+
+{% block content %}
+    <section>
+        <div class="block">
+            <h2>Suivre d'autres utilisateurs</h2>
+            <div class="new-follow">
+                <input type="text">
+                <button>Envoyer</button>
+            </div>
+        </div>
+        <div class="block">
+            <h2>Abonnements</h2>
+            <div class="follows">
+                <div class="follow">
+                    <p class="name">jean_5679</p>
+                    <p class="unfollow">Désabonner</p>
+                </div>
+                <div class="follow">
+                    <p class="name">sarahj</p>
+                    <p class="unfollow">Désabonner</p>
+                </div>
+                <div class="follow">
+                    <p class="name">severine123</p>
+                    <p class="unfollow">Désabonner</p>
+                </div>
+            </div>
+        </div>
+        <div class="block">
+            <h2>Abonnés</h2>
+            <div class="followers">
+                <div class="follower">
+                    <p class="name">jean_5679</p>
+                </div>
+                <div class="follower">
+                    <p class="name">severine123</p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
