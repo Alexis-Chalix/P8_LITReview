@@ -9,6 +9,17 @@
 
 {% block content %}
     <section>
-        <h1 style="text-align: center">CREER UNE CRITIQUE</h1>
+        <h2>Créer une critique</h2>
+        <form class="create-critical" method="post" enctype="multipart/form-data">
+            {% if ticket %}
+                {{ ticket.title }}
+            {% else %}
+                {{ create_ticket_form }}
+            {% endif %}
+            </br>
+            {{ create_review_form }}
+            {% csrf_token %}
+            <a href="/create-critical/"><button type="submit">Envoyer</button></a>
+        </form>
     </section>
 {% endblock %}

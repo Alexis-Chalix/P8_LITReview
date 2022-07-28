@@ -11,37 +11,37 @@
     <section>
         <div class="block">
             <h2>Suivre d'autres utilisateurs</h2>
-            <div class="new-follow">
-                <input type="text">
-                <button>Envoyer</button>
-            </div>
+            <form class="new-follow" method="post">
+                {{ search_form }}
+                {% csrf_token %}
+                <a href="/follows/"><button type="submit">Envoyer</button></a>
+            </form>
         </div>
         <div class="block">
             <h2>Abonnements</h2>
             <div class="follows">
-                <div class="follow">
-                    <p class="name">jean_5679</p>
-                    <p class="unfollow">Désabonner</p>
-                </div>
-                <div class="follow">
-                    <p class="name">sarahj</p>
-                    <p class="unfollow">Désabonner</p>
-                </div>
-                <div class="follow">
-                    <p class="name">severine123</p>
-                    <p class="unfollow">Désabonner</p>
-                </div>
+                <!-- TODO Gérer le cas où il y a aucun user -->
+                {% for username in user_follows %}
+                    <div class="follow">
+                        <form method="post">
+                            <p class="name">{{ username }}</p>
+                            {{ unfollow_form }}
+                            {% csrf_token %}
+                            <a href="/follows?unfollow=test"><button type="submit">Désabonner</button></a>
+                        </form>
+                    </div>
+                {% endfor %}
             </div>
         </div>
         <div class="block">
             <h2>Abonnés</h2>
             <div class="followers">
-                <div class="follower">
-                    <p class="name">jean_5679</p>
-                </div>
-                <div class="follower">
-                    <p class="name">severine123</p>
-                </div>
+                <!-- TODO Gérer le cas où il y a aucun user -->
+                {% for username in user_followers %}
+                    <div class="follower">
+                        <p class="name">{{ username }}</p>
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </section>

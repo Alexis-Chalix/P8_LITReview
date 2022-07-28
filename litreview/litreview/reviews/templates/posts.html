@@ -11,4 +11,75 @@
     <section>
         <h1 style="text-align: center">POSTS</h1>
     </section>
+    {% for element in content %}
+        <article>
+            {% if element.type == "review" %}
+                <div class="review-header">
+                    <p class="annonce">
+                        {{ element.username }} a publié une critique
+                    </p>
+                    <p class="date">
+                        {{ element.time_created }}
+                    </p>
+                </div>
+                <div class="review-content">
+                    <div class="top">
+                        <p class="title">
+                            {{ element.title }}
+                        </p>
+                        <div class="rating">
+                            {% with ''|center:5 as range %}
+                                {% for i in range %}
+                                    {% if forloop.counter <= element.rating %}
+                                        ★
+                                    {% else %}
+                                        ☆
+                                    {% endif %}
+                                {% endfor %}
+                            {% endwith %}
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <p class="content">
+                            {{ element.desc }}
+                        </p>
+                    </div>
+                <div class="ticket">
+            {% endif %}
+                {% if element.type == "ticket" %}
+                    <div class="ticket-header">
+                        <p class="annonce">
+                            {{ element.username }} a demandé une critique
+                        </p>
+                        <p class="date">
+                            {{ element.time_created }}
+                        </p>
+                    </div>
+                    <div class="ticket-content">
+                        <p class="title">{{ element.title }}</p>
+                        {% if element.desc %}
+                            <p class="description">{{ element.desc }}</p>
+                        {% endif %}
+                        {% if element.image %}
+                            <img src="{{ element.image.url }}" alt="Image de {{ element.title }}" />
+                        {% endif %}
+                    </div>
+                    <a href="create-critical.html?ticket={{ element.id }}"><button>Créer une critique</button></a>
+                {% endif %}
+            {% if element.type == "review" %}
+                </div>
+            {% endif %}
+        </article>
+    {% empty %}
+        <p>Aucun post n'a été publié</p>
+    {% endfor %}
+<style>
+    article {
+        border: aqua 1px solid;
+    }
+
+    .ticket {
+        border: red 1px solid;
+    }
+</style>
 {% endblock %}

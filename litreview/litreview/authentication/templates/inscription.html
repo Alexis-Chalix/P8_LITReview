@@ -1,0 +1,21 @@
+{% extends 'base-auth.html' %}
+{% load static %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block content %}
+    <div class="content">
+        <section>
+            <h2>Inscrivez-vous</h2>
+            <p style="color: red">{{ message }}</p>
+            <form method="post">
+                {{ form.as_p }}
+                {% csrf_token %}
+                <div class="buttons">
+                    <a href="/login/">Retourner</a>
+                    <button type="submit" >S'inscrire</button>
+                </div>
+            </form>
+        </section>
+    </div>
+{% endblock %}

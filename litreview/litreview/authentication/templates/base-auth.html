@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="fr">
+<head>
+    <link rel="stylesheet" href="{% static 'style-auth.css' %}" />
+    <meta charset="UTF-8">
+    <title>LITReview - {% block title %}{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>LITReview</h1>
+    </header>
+
+    {% block content %}{% endblock %}
+
+</body>
+</html>
